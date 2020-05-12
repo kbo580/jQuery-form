@@ -1,0 +1,194 @@
+
+body{
+  background-color: #000;
+  color: #ddd;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  color: yellowgreen;
+}
+button:hover{
+  cursor:pointer;
+}
+
+li{
+  list-style: none;
+  
+}
+.kihon{
+  color: #fff;
+  border: 1px solid;
+}
+
+.zokusei{
+  border:1px solid
+}
+
+.zokusei li{
+  list-style: disc;
+}
+.zokusei li:last-child{
+  list-style:none;
+}
+.sison strong,.group #first,.group #third,.nth #third,.children #first strong,.next #third,.first-child #first,.kansetu #third,.kansetu #fourth,.hitei #second,.hitei #third,.hitei #fourth,.nth-last-child #second,.nth-of-type dt:nth-of-type(2),.this #second,.this #fourth,.same #second,.difer #first, .difer #third,.difer #fourth,.start #first, .start #fourth,.end #second, .end #third,.cont #first, .cont #third,.douzi #first,.first-last #first,.even-odd #second,.even-odd #fourth,.contains #fourth{
+color: red;
+}
+
+
+.first-child #fourth,.nth-of-type dt:first-of-type, .gr,.first-last #fourth,.even-odd #first, .even-odd #third,.eq #fourth,.contains #fourth strong{
+color:green;
+}
+
+.nth-of-type dt:last-of-type,.bl,.eq #third,.contains #second{
+  color:skyblue
+}
+
+.eq #first,.eq #second{
+  color: yellow;
+}
+
+.attention{
+  border: 1px solid #fff;
+}
+
+
+#insert h2,#insert strong,.insert-before,.insert-after,.text-change span{
+  color: red;
+}
+h2,h3,h4,ul{
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  width: 400px;
+}
+
+.box{
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  padding: 50px;
+}
+.in{
+  color:red;
+  background-color: blue;
+  text-align: center;
+  line-height: 200px;
+ 
+} 
+.box2{
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  padding: 50px;
+}
+.in2{
+  color:red;
+  background-color: blue;
+  text-align: center;
+  line-height: 200px;
+ 
+} 
+.slide-image{
+  display: flex;
+}
+.slide-image a{
+  margin-right: 20px;
+  text-decoration: none;
+  background-color: #fff;
+  color: tomato;
+  padding: 4px;
+}
+
+#box3{
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+}
+
+input{
+  width: 50px;
+}
+
+#animation .box{
+  width: 100px;
+  height: 100px;
+  background-color: royalblue;
+  display: none;
+}
+.fade-box{
+  width: 200px;
+  height: 200px;
+  background-color: royalblue;
+  display: block;
+}
+
+
+.btn-wrapper{
+  /* background-color: #fff; */
+  display: flex;
+  width: 300px;
+  margin-left: 40px;
+  
+}
+
+.btn-wrapper dd{
+  margin: 0;
+}
+
+
+#animation span{
+  color: red;
+}
+
+.easing-wrapper{
+  position: relative;
+}
+.easing-wrapper .back{
+  position: absolute;
+  top:50%;
+  z-index: -1;
+}
+.easing-wrapper2{
+  position: relative;
+}
+.easing-wrapper2 .back2{
+  position: absolute;
+  top:50%;
+  z-index: -1;
+}
+
+input{
+  width: 200px;
+}
+#name,#name2{
+  width: 200px;
+  display: inline-block;
+}
+
+#form input{
+  margin-right: 10px;
+}
+
+#error-message{
+  color: red;
+}
+
+#form .submit-btn{
+  width: 100px;
+}
+
+
+.checkboxClass input{
+  width:10px;
+  margin: 0;
+}
+
+
+
+#selectedForm{
+  color :white;
+}
