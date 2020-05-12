@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>jQury フォーム</title>
+</head>
+<body id="form">
+  <h1>フォーム</h1>
+  <h2>フォーム部品の値の取得・変更</h2>
+  <dl>
+    <dt>value属性の値の取得</dt>
+    <dd>$('セレクター').val( );</dd>
+    <dd>text( )やattr( )のように( )内を空欄にして取得する</dd>
+    <dd>お名前を記入してください <input type="text" id="idget"><button id="confirm">確認</button></dd>
+    <dd></dd>
+    <dd>お名前 : <span id="name"></span></dd>
+    <dd> $('#btn').click(function( ){<br>
+      &emsp;$("input").val( ); <br>
+      &emsp;$('#name').text($("input").val( ));<br>
+      &emsp;});
+    </dd>
+    <dd>確認ボタンを押すとinputで取得したものをお名前の欄に書き加える操作をしている</dd>
+    <dt>value属性の値の変更</dt>
+    <dd>お名前を記入してください <input type="text" id="idget2"><button id="confirm2">確認</button></dd>
+    
+    <dd>お名前 : <span id="name2"></span><button id="idclear">クリア</button></dd>
+    <dd>$('btn').click(function( ){<br>
+      &emsp;$('#name').text(' ');<br>
+      &emsp;});
+      <dd>名前を入力した後、クリアボタンを押すことで空欄(' ')に書き換えている</dd>
+    </dd>
+    <dd>val( )はinput要素だけでなくselect/option要素、textarea要素にも使える</dd>
+  </dl>
+
+  <h2>フォームに関するイベント</h2>
+  <dl>
+    <dt>focus( )</dt>
+    <dd>input要素などフォーム部品が選択されると設定された処理を行う</dd>
+    <dd>$('セレクター').focus(function( ){<br>
+      &emsp;フォーカスされた時に実行する処理<br>
+      &emsp;});</dd>
+    <dt>blur( )</dt>  
+    <dd>フォーカスが外れた時に設定された処理を行う</dd>
+    <dd>$('セレクター').blur(function( ){<br>
+      &emsp;外された時に実行する処理<br>
+      &emsp;});</dd>
+    <dd>フォームにカーソルが移ると背景色が変わり、カーソルが外れると背景色が戻る</dd>
+    <dd><input type="text" id="focus"></dd>
+    <dd>$('input').focus(function(){<br>
+      &emsp;$(this).css('backgroundColor','pink');<br>
+      &emsp;});
+    </dd>
+    <dd>$('input').blur(function(){<br>
+      &emsp;$(this).css('backgroundColor','white');<br>
+      &emsp;});
+    </dd>
+    <dt>change( )</dt>
+    <dd>フォームの内容が変更されると処理を行う</dd>
+    <dd>$('セレクター').change(function( ){<br>
+      &emsp;要素の内容が変更された時に実行する処理<br>
+      &emsp;});</dd>
+    <dd>セレクトボックスを選択するとアラートが出る</dd>
+    <dd>
+      <select name="" id="select">
+        <option value="">選択してください</option>
+        <option value="">select1</option>
+        <option value="">select2</option>
+        <option value="">select3</option>
+      </select>
+    </dd>
+    <dd>$('#select').change(function(){<br>
+      &emsp;alert('選択されました!');<br>
+      &emsp;});</dd>
+    <dt>submit( )</dt>
+    <dd></dd>
+    <dd>$('セレクター').submit(function( ){<br>
+      &emsp;要素の内容が変更された時に実行する処理<br>
+      &emsp;});</dd>
+    <dd>フォームの送信時に設定された処理を行う。またbutton要素は通常フォーム送信できないがsubmit( )を使う場合は可能</dd>
+    <dd><form id="form1">
+      <input type="text"><dd></dd>
+      <dd><input type="submit" value="送信" class="submit-btn"></dd>  
+    </form></dd>
+    <dd>$('form').submit(function(){<br>
+      &emsp;confirm('送信しますか？');<br>
+      &emsp;});</dd>
+    <dt>submit( )の応用</dt>
+    <dd></dd>
+    <form id="form2">
+      <dd>
+        <div id="error-message"></div >
+        <dd>お名前：<input type="text" id="name3"></dd> 
+        <dd>ご意見：<textarea id="opinion" ></textarea></dd> 
+        <dd><input type="submit" value="送信" class="submit-btn"></dd>
+      </dd>
+    </form>
+    <dd>$('#form2').submit(function( ){<br>
+      &emsp;if($('input').val( ) == ' '&&($('textarea').val( ) == ' ')){<br>
+      &emsp; &emsp; $('#error-message').text('何でもいいから書いてね！！');<br>
+      &emsp;}else if($('#name').val( ) == ' '){<br>
+      &emsp; &emsp;$('#error-message').text('名前を書いてね！');<br>
+      &emsp;}else if($('textarea').val( ) == ' '){<br>
+      &emsp; &emsp;$('#error-message').text('理由を書いてね！');<br>
+      &emsp;}else{<br>
+      &emsp; &emsp;$('#error-message').text('ご協力ありがとうございます！');<br>
+        &emsp;}<br>
+      &emsp;&emsp;return false;<br>
+      &emsp;});</dd>
+  </dl> 
+  <h2>フォーム部品を選択するセレクター</h2>
+  <dl>
+    <dt>:checked</dt>
+    <dd>:checkedはラジオボタンやチェックボタンにチェックが入っている要素だけを選択できる</dd>
+    <dd>
+      <div class="checkboxClass">
+        <input type="checkbox" value="item1">item1
+        <input type="checkbox" value="item2">item2
+        <input type="checkbox" value="item3">item3
+        <input type="checkbox" value="item4">item4
+        <input type="checkbox" value="item5">item5
+      </div>
+    </dd>
+    <dd> $('input[type="checkbox"]').change(function(){<br>
+      &emsp;$(':checked');alert('チェックされました') <br>
+      &emsp;});</dd>
+  </dl>
+  <dl  class="selectbox">
+    <dt>:selected</dt>
+    <dd>:selecedはセレクトボックスで選択された要素だけを選択できる</dd>
+    <dd>
+      <select id="selecte">
+        <option value="">選択してください</option>
+        <option value="A型">A型</option>
+        <option value="B型">B型</option>
+        <option value="O型">O型</option>
+        <option value="AB型">AB型</option>
+      </select>
+      <span id="selectedForm"></span>
+    </dd>
+    <dd>$('#selected').change(function( ){<br>
+      &emsp;if($(':selected')){<br>
+      &emsp;&emsp; $('.selectbox').css('color','pink')<br>
+      &emsp;&emsp;}<br>
+      &emsp;if($('#select').val( ) == ' ' ){<br>
+      &emsp;&emsp; $('#selectedForm').text( ' ' );<br>
+      &emsp;&emsp;}else{<br>
+      &emsp;&emsp; $('#selectedForm').text(`血液型は${$('#select').val( )}です`);<br>
+      &emsp;&emsp;}<br>
+      &emsp;});
+    </dd>  
+  </dl>
+      <script src="js/main.js"></script>
+</body>
+</html>
